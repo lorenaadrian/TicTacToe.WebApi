@@ -30,3 +30,28 @@
 <p>TicTacToe.Web api depende da lib TicTacToeCore</p>
 <p>netcoreapp3.1</p>
 <p>AspNetCore.Mvc.NewtonsoftJson v3.1.7</p>
+
+<h1> Como usar a API </h1>
+
+<h2> Registre um novo jogo: </h2>
+<p>Execute um <b>post</b> conforme esse exemplo:
+<span>http://seu.dominio.preferido/tictactoe/game</span>
+<p> A API irá retornar qual é o primeiro jogador e o Id do seu jogo.</p>
+<span> 
+{
+    "id": "2345f538-d2de-4786-b929-06418bf6d5ff",
+    "firstPlayer": "X"
+}</span>
+
+<h2> Realize uma jogada </h2>
+<p> Para realizar uma jogada, execute um <b>post</b> conforme exemplo a seguir:
+<span>http://seu.dominio.preferido/tictactoe/{id}/movement
+<p>Informe a jogada conforme a seguir:
+<span>
+{
+   "player":"X",
+   "position":{ "x":2, "y":2}
+}</span>
+<p> :heavy_exclamation_mark: Importante: as coordenadas x e y só admitem valores entre 0 e 2, inclusive.</p>
+<p> :bangbang: Mais importante: respeite a vez do jogador, que pode ser "X" ou "O" (a letra ó).</p>
+
